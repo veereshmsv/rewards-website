@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — Kids Rewards</title>
+  <meta name="description" content="How Kids Rewards collects, uses and protects information, including protections for children and regional rights for Australia, India, the UAE, the UK and the United States.">
+  <meta name="theme-color" content="#7B5400">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+  <link rel="canonical" href="https://kidsreward.in/privacy.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --brown:      #7B5400;
+      --brown-dark: #4A2C00;
+      --gold:       #FEB300;
+      --gold-2:     #FFC107;
+      --bg:         #FFF5E7;
+      --card-bg:    #ffffff;
+      --text:       #3C2C00;
+      --muted:      #6E5922;
+      --border:     #E7D4A8;
+      --rose:       #D81B60;
+      --radius:     14px;
+      --shadow:     0 6px 24px rgba(74,44,0,0.08);
+      --font:       'Poppins', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.75;
+      padding: 0 0 60px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      background: linear-gradient(135deg, #3A2000 0%, #7B5400 60%, #BB8800 100%);
+      color: #fff;
+      padding: 52px 24px 40px;
+      text-align: center;
+      position: relative;
+    }
+    .hero .home-link {
+      position: absolute; left: 22px; top: 22px;
+      color: #fff; text-decoration: none; font-size: 0.86rem; font-weight: 500;
+      opacity: 0.9; display: inline-flex; align-items: center; gap: 6px;
+    }
+    .hero .home-link:hover { opacity: 1; text-decoration: underline; }
+    .hero .app-icon {
+      width: 76px; height: 76px; background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 20px; margin: 6px auto 18px;
+      display: flex; align-items: center; justify-content: center; font-size: 2.2rem;
+    }
+    .hero h1 { font-size: clamp(1.6rem, 5vw, 2.4rem); font-weight: 800; letter-spacing: -0.5px; }
+    .hero h1 .k { color: #fff; } .hero h1 .r { color: var(--gold); }
+    .hero p { margin-top: 8px; font-size: 0.95rem; opacity: 0.9; }
+
+    .container { max-width: 840px; margin: 0 auto; padding: 0 20px; }
+
+    .effective-bar {
+      background: #FFF7E6; border-left: 4px solid var(--gold);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 12px 18px; margin: 32px 0 24px; font-size: 0.9rem; color: #8a5a00;
+    }
+
+    .intro {
+      background: var(--card-bg); border: 1px solid var(--border);
+      border-radius: var(--radius); box-shadow: var(--shadow);
+      padding: 22px 26px; margin-bottom: 24px; font-size: 0.94rem; color: #5a4a26;
+    }
+    .intro strong { color: var(--text); }
+
+    /* ── TOC ── */
+    .toc {
+      background: var(--card-bg); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 22px 26px; margin-bottom: 34px; box-shadow: var(--shadow);
+    }
+    .toc h2 { font-size: 0.95rem; font-weight: 700; color: var(--brown); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.05em; }
+    .toc ol { padding-left: 20px; columns: 2; column-gap: 30px; }
+    @media (max-width: 560px) { .toc ol { columns: 1; } }
+    .toc li { margin: 5px 0; break-inside: avoid; }
+    .toc a { color: var(--text); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+    .toc a:hover { color: var(--brown); text-decoration: underline; }
+
+    /* ── Sections ── */
+    .section {
+      background: var(--card-bg); border-radius: var(--radius); border: 1px solid var(--border);
+      box-shadow: var(--shadow); padding: 26px 28px; margin-bottom: 22px; transition: box-shadow 0.2s;
+    }
+    .section:hover { box-shadow: 0 10px 30px rgba(74,44,0,0.13); }
+    .section-header { display: flex; align-items: center; gap: 12px; cursor: pointer; user-select: none; }
+    .section-icon {
+      width: 38px; height: 38px; border-radius: 10px; flex-shrink: 0;
+      background: linear-gradient(135deg, var(--brown), var(--gold));
+      color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.05rem;
+    }
+    .section-header h2 { font-size: 1.04rem; font-weight: 700; flex: 1; }
+    .toggle-icon { color: var(--muted); font-size: 1rem; transition: transform 0.3s; }
+    .section-body { margin-top: 16px; font-size: 0.93rem; color: #55461f; }
+    .section-body p { margin-bottom: 12px; }
+    .section-body p:last-child { margin-bottom: 0; }
+    .section-body ul, .section-body ol { padding-left: 22px; margin-bottom: 12px; }
+    .section-body li { margin: 6px 0; }
+    .section-body a { color: var(--brown); text-decoration: none; font-weight: 500; }
+    .section-body a:hover { text-decoration: underline; }
+    .section.collapsed .section-body { display: none; }
+    .section.collapsed .toggle-icon { transform: rotate(-90deg); }
+
+    .info-box {
+      background: #FFF7E6; border-left: 4px solid var(--gold);
+      border-radius: 0 8px 8px 0; padding: 12px 16px; margin: 14px 0; font-size: 0.9rem; color: #7a5200;
+    }
+    .info-box.rose { background: #FDE7F2; border-left-color: var(--rose); color: #8a1043; }
+
+    /* Region flags heading */
+    .region { border-top: 1px dashed var(--border); padding-top: 14px; margin-top: 16px; }
+    .region:first-child { border-top: none; padding-top: 0; margin-top: 0; }
+    .region h3 { font-size: 0.98rem; font-weight: 700; color: var(--text); margin-bottom: 6px; display: flex; align-items: center; gap: 9px; }
+    .region .flag { font-size: 1.15rem; }
+
+    /* ── Footer ── */
+    footer.pp { text-align: center; padding: 36px 20px 0; font-size: 0.83rem; color: var(--muted); }
+    footer.pp a { color: var(--brown); text-decoration: none; }
+    footer.pp a:hover { text-decoration: underline; }
+    footer.pp .contact-btn {
+      display: inline-block; margin-top: 16px; padding: 11px 26px;
+      background: var(--brown); color: #fff; border-radius: 50px; font-size: 0.88rem; font-weight: 600;
+      text-decoration: none; transition: background 0.2s, transform 0.15s;
+    }
+    footer.pp .contact-btn:hover { background: var(--brown-dark); transform: translateY(-1px); }
+
+    /* ── Back-to-top ── */
+    #backToTop {
+      position: fixed; bottom: 26px; right: 22px; width: 46px; height: 46px; border-radius: 50%;
+      background: var(--brown); color: #fff; border: none; font-size: 1.3rem; cursor: pointer;
+      box-shadow: 0 6px 18px rgba(123,84,0,0.45); display: none; align-items: center; justify-content: center;
+      transition: background 0.2s, transform 0.15s; z-index: 99;
+    }
+    #backToTop:hover { background: var(--brown-dark); transform: scale(1.08); }
+    #backToTop.visible { display: flex; }
+
+    @media (max-width: 600px) {
+      .section { padding: 20px 18px; }
+      .hero { padding: 46px 16px 30px; }
+      .hero .home-link { position: static; display: inline-flex; margin-bottom: 14px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <header class="hero">
+    <a class="home-link" href="index.html">← Back to home</a>
+    <div class="app-icon">🎉</div>
+    <h1><span class="k">Kids</span><span class="r">Rewards</span> — Privacy Policy</h1>
+    <p>Your child's privacy matters. Here's exactly how we handle data.</p>
+  </header>
+
+  <div class="container">
+
+    <div class="effective-bar">
+      📅&nbsp; This Privacy Policy is effective as of <strong>30 August 2026</strong>.
+    </div>
+
+    <div class="intro">
+      This Privacy Policy explains how <strong>gunavs</strong> ("we", "us", "our", the "Service Provider")
+      collects, uses, stores and protects information when you use the <strong>Kids Rewards</strong> mobile
+      application (the "App"). Kids Rewards is a family app that lets a parent or guardian reward children
+      for chores with points, redeemable rewards, dream goals and a Piggy Bank savings feature. By using the
+      App, you agree to the practices described here. If you do not agree, please do not use the App.
+      This policy is written to serve families in <strong>Australia, India, the United Arab Emirates, the
+      United Kingdom and the United States</strong>, and includes region-specific rights in Section 9.
+    </div>
+
+    <!-- Table of Contents -->
+    <nav class="toc" aria-label="Table of contents">
+      <h2>📋 Table of Contents</h2>
+      <ol>
+        <li><a href="#s1">Information We Collect</a></li>
+        <li><a href="#s2">How We Use Information</a></li>
+        <li><a href="#s3">Where Data Is Stored &amp; Retention</a></li>
+        <li><a href="#s4">Third-Party Services</a></li>
+        <li><a href="#s5">Children's Privacy</a></li>
+        <li><a href="#s6">Device Permissions</a></li>
+        <li><a href="#s7">Data Security</a></li>
+        <li><a href="#s8">Your Privacy Rights</a></li>
+        <li><a href="#s9">Country-Specific Notices</a></li>
+        <li><a href="#s10">International Users &amp; Transfers</a></li>
+        <li><a href="#s11">Changes to This Policy</a></li>
+        <li><a href="#s12">Contact Us</a></li>
+      </ol>
+    </nav>
+
+    <!-- 1 -->
+    <div class="section" id="s1">
+      <div class="section-header" onclick="toggleSection(this)" aria-expanded="true">
+        <div class="section-icon">📰</div>
+        <h2>1. Information We Collect</h2>
+        <span class="toggle-icon">▼</span>
+      </div>
+      <div class="section-body">
+        <div class="info-box">🔒 We do <strong>not</strong> sell, rent or trade your personal information to anyone.</div>
+        <p>We collect only what is needed to operate the App:</p>
+        <p><strong>a) Parent/guardian account (Google Sign-In).</strong> To secure the App, a parent or guardian
+          signs in with their Google account. Through Google Sign-In we receive your <strong>name, email address
+          and basic Google profile</strong> (using the "email" and "profile" scopes). We use this only to identify
+          the account holder and enable sign-in.</p>
+        <p><strong>b) Children's information you enter.</strong> As a parent or guardian, you may add one or more
+          children ("Explorers") and enter their <strong>name or nickname, an emoji or photo avatar, an optional
+          date of birth</strong>, and their <strong>points and Piggy Bank balances</strong>, activities, rewards,
+          dream goals and transaction history. This information is created by you and stored
+          <strong>locally on your device</strong> (see Section 3).</p>
+        <p><strong>c) A local award password.</strong> If you choose to set one, an optional award password is
+          stored locally on your device to gate awarding points and Piggy Bank transfers. It is a local gate, not
+          an online account credential.</p>
+        <p><strong>d) Automatically collected data.</strong> Like most mobile apps, the App and its underlying
+          platform services (Google Play Services and Firebase) may automatically collect limited technical data
+          such as device type, device identifiers, operating-system version, app-version and diagnostic/usage
+          information. This is used for stability, security and to improve the App.</p>
+      </div>
+    </div>
+
+    <!-- 2 -->
+    <div class="section" id="s2">
+      <div class="section-header" onclick="toggleSection(this)" aria-expanded="true">
+        <div class="section-icon">🎯</div>
+        <h2>2. How We Use Information</h2>
+        <span class="toggle-icon">▼</span>
+      </div>
+      <div class="section-body">
+        <p>We use the information described above to:</p>
+        <ul>
+          <li>Provide, operate and maintain the App's reward, Piggy Bank and profile features;</li>
+          <li>Authenticate the parent/guardian and keep the App secure;</li>
+          <li>Save your family's progress, points and history on your device;</li>
+          <li>Diagnose problems, prevent abuse and improve performance and reliability;</li>
+          <li>Comply with legal obligations.</li>
+        </ul>
+        <p>We do <strong>not</strong> use children's information for advertising or profiling, and we do not build
+          marketing profiles of children.</p>
+      </div>
+    </div>
+
+    <!-- 3 -->
+    <div class="section" id="s3">
+      <div class="section-header" onclick="toggleSection(this)" aria-expanded="true">
+        <div class="section-icon">💾</div>
+        <h2>3. Where Data Is Stored &amp; Retention</h2>
+        <span class="toggle-icon">▼</span>
+      </div>
+      <div class="section-body">
+        <div class="info-box">📴 Your family's data is stored <strong>locally on your device</strong> — not on our servers.</div>
+        <p>All information about your children (profiles, points, Piggy Bank balances, activities, rewards, dream
+          goals and transaction history) is stored in a private database on your device. We do not operate a cloud
+          database and we do not upload this information to our servers.</p>
+        <p><strong>Retention &amp; deletion.</strong> Because the data is on your device, you are in control. You can
+          delete an individual child, clear entries, or remove all data by uninstalling the App. Uninstalling the App
+          removes the local database from your device. Your Google account information is managed by Google under
+          Google's own privacy policy; you can review or revoke the App's access from your
+          <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">Google Account settings</a>.</p>
+      </div>
+    </div>
+
+    <!-- 4 -->
+    <div class="section" id="s4">
+      <div class="section-header" onclick="toggleSection(this)" aria-expanded="true">
+        <div class="section-icon">🔗</div>
+        <h2>4. Third-Party Services</h2>
+        <span class="toggle-icon">▼</span>
+      </div>
+      <div class="section-body">
+        <p>The App relies on a small number of trusted third-party services. Their handling of data is governed by
+          their own privacy policies:</p>
+        <ul>
+          <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Sign-In &amp; Google Account</a> — authentication.</li>
+          <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Play Services</a> — core app services on Android.</li>
+          <li><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Google Firebase</a> — app stability, security and basic usage analytics on Android.</li>
+        </ul>
+        <p>We may disclose information only where necessary: to comply with the law or a valid legal request; to
+          protect the rights, property or safety of our users, the public or us; or to detect, prevent or address
+          fraud, security or technical issues.</p>
+      </div>
+    </div>
+
+    <!-- 5 -->
+    <div class="section" id="s5">
+      <div class="section-header" onclick="toggleSection(this)" aria-expanded="true">
+        <div class="section-icon">👨‍👧</div>
+        <h2>5. Children's Privacy</h2>
+        <span class="toggle-icon">▼</span>
+      </div>
+      <div class="section-body">
+        <div class="info-box rose">🔔 This section is especially important — Kids Rewards is designed to be used by a parent or guardian on behalf of their children.</div>
+        <p>The App is intended to be operated by a <strong>parent or legal guardian</strong>. Children do not create
+          accounts or sign in. All account management and data entry is performed by the adult, who provides consent
+          for any children's information entered into the App.</p>
+        <p>We do not knowingly collect personal information directly from children, and we do not require a child to
+          provide information beyond what the parent chooses to enter (such as a name or nickname), which stays on the
+          device. We do not sell children's information or use it for targeted advertising.</p>
+        <p>If you believe a child's information has been provided without appropriate parental consent, or you would
+          like it removed, please contact us at
+          <a href="mailto:veereshmsv@gmail.com">veereshmsv@gmail.com</a> and we will take appropriate action. Because
+          the data lives on your device, deleting the child in the App or uninstalling the App also removes it.</p>
+        <p>We honour the children's-data protections that apply in the regions we serve, including the U.S. Children's
+          Online Privacy Protection Act (COPPA), the UK Age-Appropriate Design Code, and the parental-consent
+          requirements of India's Digital Personal Data Protection Act, 2023. See Section 9 for details.</p>
+      </div>
+    </div>
+
+    <!-- 6 -->
+    <div class="section" id="s6">
+      <div class="section-header" onclick="toggleSection(this)" aria-expanded="true">
+        <div class="section-icon">📱</div>
+        <h2>6. Device Permissions</h2>
+        <span class="toggle-icon">▼</span>
+      </div>
+      <div class="section-body">
+        <p>The App may ask for the following permissions, which you can grant or deny:</p>
+        <ul>
+          <li><strong>Camera / Photos.</strong> If you choose to add a photo avatar for a child, the App accesses your
+            camera or photo library. Selected photos are copied into the App's private storage on your device and are
+            <strong>not uploaded</strong> anywhere.</li>
+          <li><strong>Internet.</strong> Used for Google Sign-In and core Google/Firebase services. The App otherwise
+            works offline.</li>
+        </ul>
+        <p>The App does <strong>not</strong> collect precise GPS location.</p>
+      </div>
+    </div>
+
+    <!-- 7 -->
+    <div class="section" id="s7">
+      <div class="section-header" onclick="toggleSection(this)" aria-expanded="true">
+        <div class="section-icon">🔒</div>
+        <h2>7. Data Security</h2>
+        <span class="toggle-icon">▼</span>
+      </div>
+      <div class="section-body">
+        <p>We take reasonable technical and organisational measures to protect information. Because your family's data
+          is stored locally, its security also depends on your device — we recommend using a device lock screen and
+          keeping your operating system up to date.</p>
+        <p>No method of electronic storage or transmission is 100% secure, and we cannot guarantee absolute security.
+          We will handle any personal-data breach in line with the applicable laws of the regions we serve.</p>
+      </div>
+    </div>
+
+    <!-- 8 -->
+    <div class="section" id="s8">
+      <div class="section-header" onclick="toggleSection(this)" aria-expanded="true">
+        <div class="section-icon">⚖️</div>
+        <h2>8. Your Privacy Rights</h2>
+        <span class="toggle-icon">▼</span>
+      </div>
+      <div class="section-body">
+        <p>Subject to your local laws, you may have the right to access, correct, delete, or export your personal data,
+          to object to or restrict certain processing, and to withdraw consent. Because most data is stored on your
+          device, you can exercise many of these rights directly within the App (edit or delete a child, clear data,
+          or uninstall). For anything else — including your Google account data — contact us at
+          <a href="mailto:veereshmsv@gmail.com">veereshmsv@gmail.com</a> and we will respond within the timeframe
+          required by your local law. We will not discriminate against you for exercising your rights.</p>
+      </div>
+    </div>
+
+    <!-- 9 -->
+    <div class="section" id="s9">
+      <div class="section-header" onclick="toggleSection(this)" aria-expanded="true">
+        <div class="section-icon">🌍</div>
+        <h2>9. Country-Specific Notices</h2>
+        <span class="toggle-icon">▼</span>
+      </div>
+      <div class="section-body">
+        <p>The following notices supplement this policy for users in the regions we serve. Where a regional notice
+          conflicts with the general policy, the regional notice governs for users in that region.</p>
+
+        <div class="region">
+          <h3><span class="flag">🇦🇺</span> Australia</h3>
+          <p>We handle personal information in accordance with the <strong>Privacy Act 1988 (Cth)</strong> and the
+            <strong>Australian Privacy Principles (APPs)</strong>. You may request access to and correction of your
+            personal information and make a privacy complaint by emailing us. If you are not satisfied with our
+            response, you may contact the Office of the Australian Information Commissioner (OAIC) at
+            <a href="https://www.oaic.gov.au" target="_blank" rel="noopener">oaic.gov.au</a>. We do not disclose your
+            personal information to overseas recipients except through the third-party services listed in Section 4.</p>
+        </div>
+
+        <div class="region">
+          <h3><span class="flag">🇮🇳</span> India</h3>
+          <p>We handle personal data consistent with the <strong>Digital Personal Data Protection Act, 2023 (DPDP Act)</strong>.
+            The parent/guardian acts as the account holder and provides <strong>verifiable consent</strong> for the
+            processing of any child's data entered into the App; we do not undertake tracking, behavioural monitoring
+            or targeted advertising directed at children. As a Data Principal you may access, correct, update, complete
+            or erase your data and may nominate or raise a grievance. To exercise these rights or to reach our grievance
+            contact, email <a href="mailto:veereshmsv@gmail.com">veereshmsv@gmail.com</a>. You may also escalate to the
+            Data Protection Board of India once operational.</p>
+        </div>
+
+        <div class="region">
+          <h3><span class="flag">🇦🇪</span> United Arab Emirates</h3>
+          <p>We handle personal data consistent with <strong>UAE Federal Decree-Law No. 45 of 2021 on the Protection of
+            Personal Data (PDPL)</strong>. We process personal data on the basis of your consent and for the legitimate
+            purpose of operating the App. You have the right to obtain information about your data, request correction or
+            erasure, restrict or object to processing, and withdraw consent. To exercise these rights, contact us at
+            <a href="mailto:veereshmsv@gmail.com">veereshmsv@gmail.com</a>.</p>
+        </div>
+
+        <div class="region">
+          <h3><span class="flag">🇬🇧</span> United Kingdom</h3>
+          <p>We process personal data in accordance with the <strong>UK GDPR</strong> and the <strong>Data Protection
+            Act 2018</strong>, and we follow the ICO's <strong>Age-Appropriate Design Code</strong> for services likely
+            to be accessed by children. Our lawful bases are your <strong>consent</strong> (which you may withdraw at any
+            time) and our <strong>legitimate interests</strong> in operating and securing the App. You have the rights of
+            access, rectification, erasure, restriction, objection and data portability. You may lodge a complaint with
+            the Information Commissioner's Office (ICO) at <a href="https://ico.org.uk" target="_blank" rel="noopener">ico.org.uk</a>.
+            We are the data controller; contact <a href="mailto:veereshmsv@gmail.com">veereshmsv@gmail.com</a>.</p>
+        </div>
+
+        <div class="region">
+          <h3><span class="flag">🇺🇸</span> United States</h3>
+          <p><strong>Children (COPPA).</strong> The App is operated by parents/guardians, who provide consent for any
+            children's information entered. We do not knowingly collect personal information online directly from children
+            under 13 without verifiable parental consent, and children's information is stored locally on your device. A
+            parent may review or delete their child's information in the App or by contacting us.</p>
+          <p><strong>California (CCPA/CPRA) &amp; other state laws.</strong> We do <strong>not sell</strong> or "share"
+            (for cross-context behavioural advertising) your personal information, and we do not knowingly do so for
+            minors. You have the right to know, access, correct and delete your personal information and to be free from
+            discrimination for exercising these rights. To make a request, email
+            <a href="mailto:veereshmsv@gmail.com">veereshmsv@gmail.com</a>.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 10 -->
+    <div class="section" id="s10">
+      <div class="section-header" onclick="toggleSection(this)" aria-expanded="true">
+        <div class="section-icon">✈️</div>
+        <h2>10. International Users &amp; Transfers</h2>
+        <span class="toggle-icon">▼</span>
+      </div>
+      <div class="section-body">
+        <p>Your family's data is primarily stored on your own device in your country. Where limited data is processed by
+          our third-party providers (Google/Firebase) for sign-in, stability and security, those providers may process
+          data on servers located in other countries under their own safeguards and privacy policies. By using the App,
+          you understand that such limited processing may occur internationally.</p>
+      </div>
+    </div>
+
+    <!-- 11 -->
+    <div class="section" id="s11">
+      <div class="section-header" onclick="toggleSection(this)" aria-expanded="true">
+        <div class="section-icon">📄</div>
+        <h2>11. Changes to This Policy</h2>
+        <span class="toggle-icon">▼</span>
+      </div>
+      <div class="section-body">
+        <p>We may update this Privacy Policy from time to time. Changes will be posted on this page with a revised
+          effective date. Your continued use of the App after changes are posted constitutes acknowledgement of the
+          updated policy. We encourage you to review this page periodically.</p>
+      </div>
+    </div>
+
+    <!-- 12 -->
+    <div class="section" id="s12">
+      <div class="section-header" onclick="toggleSection(this)" aria-expanded="true">
+        <div class="section-icon">✉️</div>
+        <h2>12. Contact Us</h2>
+        <span class="toggle-icon">▼</span>
+      </div>
+      <div class="section-body">
+        <p>If you have questions, concerns or requests about this Privacy Policy or your personal data, please contact us:</p>
+        <ul>
+          <li>📧 Email: <a href="mailto:veereshmsv@gmail.com">veereshmsv@gmail.com</a></li>
+          <li>🏢 Developer: gunavs</li>
+          <li>📱 Application: Kids Rewards</li>
+          <li>🌐 Website: <a href="https://kidsreward.in/" target="_blank" rel="noopener">kidsreward.in</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="pp">
+      <p>© 2026 <strong>gunavs</strong>. All rights reserved. &nbsp;|&nbsp; <a href="index.html">Home</a></p>
+      <a class="contact-btn" href="mailto:veereshmsv@gmail.com">✉ Contact Us</a>
+    </footer>
+
+  </div><!-- /container -->
+
+  <button id="backToTop" title="Back to top" aria-label="Back to top">⇧</button>
+
+  <script>
+    function toggleSection(header) {
+      const section = header.closest('.section');
+      const expanded = header.getAttribute('aria-expanded') === 'true';
+      header.setAttribute('aria-expanded', String(!expanded));
+      section.classList.toggle('collapsed', expanded);
+    }
+
+    const backToTopBtn = document.getElementById('backToTop');
+    window.addEventListener('scroll', function () {
+      backToTopBtn.classList.toggle('visible', window.scrollY > 320);
+    });
+    backToTopBtn.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    document.querySelectorAll('.toc a[href^="#"]').forEach(function (anchor) {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          if (target.classList.contains('section') && target.classList.contains('collapsed')) {
+            toggleSection(target.querySelector('.section-header'));
+          }
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    function highlightFromHash() {
+      const hash = window.location.hash;
+      if (!hash) return;
+      const el = document.querySelector(hash);
+      if (!el) return;
+      el.style.transition = 'box-shadow 0.3s';
+      el.style.boxShadow = '0 0 0 3px rgba(254,179,0,0.6)';
+      setTimeout(function () { el.style.boxShadow = ''; }, 1800);
+    }
+    window.addEventListener('hashchange', highlightFromHash);
+    highlightFromHash();
+  </script>
+
+</body>
+</html>
