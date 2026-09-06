@@ -649,8 +649,7 @@
         <div class="phone">
           <div class="phone-screen phone-video">
             <button class="yt-facade" type="button" data-id="2A6sxAdXlGY" aria-label="Play video: Kids Rewards demo">
-              <img src="https://i.ytimg.com/vi/2A6sxAdXlGY/oardefault.jpg"
-                   onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/2A6sxAdXlGY/hqdefault.jpg';"
+              <img src="https://i.ytimg.com/vi/2A6sxAdXlGY/hqdefault.jpg"
                    alt="Kids Rewards app demo video" loading="lazy">
               <span class="yt-play" aria-hidden="true">
                 <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
@@ -886,6 +885,27 @@
   <script>
     // Click-to-play YouTube facade: load the player only when the user clicks.
     document.querySelectorAll('.yt-facade').forEach(function (btn) {
+      var id = btn.getAttribute('data-id');
+      var img = btn.querySelector('img');
+
+      // Upgrade the poster to the best REAL thumbnail available for this video.
+      // Some videos (e.g. Shorts) lack oardefault/maxresdefault and YouTube returns a
+      // 120x90 gray placeholder that still "loads" — so we skip anything <= 120px wide.
+      // The inline hqdefault src always exists, so a poster shows immediately either way.
+      if (img && id) {
+        (function upgrade(list, i) {
+          if (i >= list.length) return;
+          var url = 'https://i.ytimg.com/vi/' + id + '/' + list[i] + '.jpg';
+          var probe = new Image();
+          probe.onload = function () {
+            if (probe.naturalWidth > 120) { img.src = url; }   // real thumbnail — use it
+            else { upgrade(list, i + 1); }                     // placeholder — try next
+          };
+          probe.onerror = function () { upgrade(list, i + 1); };
+          probe.src = url;
+        })(['oardefault', 'maxresdefault'], 0);                // prefer vertical, then hi-res
+      }
+
       btn.addEventListener('click', function () {
         var id = btn.getAttribute('data-id');
         var iframe = document.createElement('iframe');
