@@ -135,7 +135,7 @@
       position: relative; z-index: 1;
       display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px;
       align-items: center;
-      padding: 74px 0 84px;
+      padding: 40px 0 44px;
     }
     .pill {
       display: inline-flex; align-items: center; gap: 8px;
@@ -172,7 +172,7 @@
     /* Phone mock */
     .phone-col { display: flex; justify-content: center; }
     .phone {
-      width: 260px; max-width: 78vw; aspect-ratio: 9 / 18.5;
+      width: 320px; max-width: 84vw; aspect-ratio: 9 / 18.5;
       background: linear-gradient(160deg, #4A2C00, #3A2000);
       border-radius: 34px; padding: 12px;
       box-shadow: var(--shadow-lg), 0 0 0 2px rgba(255,255,255,0.08) inset;
@@ -182,34 +182,91 @@
       width: 100%; height: 100%; background: var(--cream);
       border-radius: 24px; overflow: hidden; display: flex; flex-direction: column;
     }
-    .ps-head {
-      background: linear-gradient(135deg, #4A2C00, #7B5400 70%, #A67C00);
-      color: #fff; padding: 20px 16px 16px;
+
+    /* Visually-hidden (SEO / screen readers) */
+    .sr-only {
+      position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+      overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
     }
-    .ps-head .greet { font-size: 0.72rem; opacity: 0.85; }
-    .ps-head .title { font-size: 1.02rem; font-weight: 700; margin-top: 2px; }
-    .ps-body { padding: 12px; display: flex; flex-direction: column; gap: 10px; }
-    .kid-card {
-      background: #fff; border: 1px solid var(--outline); border-radius: 14px;
-      padding: 10px 12px; display: flex; align-items: center; gap: 10px;
-      box-shadow: 0 4px 12px rgba(74,44,0,0.06);
+
+    /* Hero image collage (left) — Facebook-style varied-size montage */
+    .hero-collage {
+      position: relative;
+      display: flex; align-items: flex-start; gap: 16px;
     }
-    .kid-ava {
-      width: 34px; height: 34px; border-radius: 50%; flex-shrink: 0;
-      display: flex; align-items: center; justify-content: center; font-size: 1.1rem;
-      background: var(--gold-soft);
+    .cc-col { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+    .cc-col-a { flex: 1.05; margin-top: 26px; }
+    .cc-col-b { flex: 0.95; }
+    .tile {
+      position: relative; overflow: hidden; display: block; width: 100%;
+      border-radius: 18px; box-shadow: var(--shadow-lg);
+      background: linear-gradient(135deg, var(--gold-soft), var(--rose-soft));
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
     }
-    .kid-meta { flex: 1; min-width: 0; }
-    .kid-meta .n { font-size: 0.78rem; font-weight: 600; color: var(--text); }
-    .kid-meta .s { font-size: 0.64rem; color: var(--text-soft); }
-    .kid-pts { font-size: 0.82rem; font-weight: 800; color: var(--brown); }
-    .kid-pts small { display:block; font-size:0.52rem; font-weight:500; color: var(--rose); text-align:right; }
+    .tile img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+    .tile-ph {
+      position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+      color: var(--brown-dark); font-weight: 700; font-size: 0.92rem; opacity: 0.75; text-align: center; padding: 10px;
+    }
+    .tile-ph-cta { color: #fff; opacity: 1; }
+    .tile-a { aspect-ratio: 3 / 5; transform: rotate(-2deg); }
+    .tile-b { aspect-ratio: 4 / 5; transform: rotate(1.6deg); }
+    .tile-c { aspect-ratio: 4 / 5; transform: rotate(-1.4deg);
+              background: linear-gradient(150deg, var(--brown-deep), var(--brown) 55%, var(--gold)); }
+    .tile:hover { transform: translateY(-4px) rotate(0deg); box-shadow: 0 22px 55px rgba(74,44,0,0.24); }
+
+    /* Promo 3 — "Get the app" CTA card */
+    .cta-card {
+      position: absolute; inset: 0; color: #fff; text-align: center;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 7px; padding: 8% 10%;
+    }
+    .cta-logo { width: clamp(40px, 26%, 56px); height: auto; border-radius: 14px;
+                box-shadow: 0 6px 16px rgba(0,0,0,0.35); }
+    .cta-name { font-weight: 800; font-size: clamp(0.95rem, 1.5vw + 0.5rem, 1.2rem); letter-spacing: -0.3px; }
+    .cta-tag { font-size: clamp(0.66rem, 0.6vw + 0.5rem, 0.82rem); opacity: 0.92; line-height: 1.25; }
+    .cta-stars { color: var(--gold-soft); font-size: 0.8rem; letter-spacing: 2px; }
+    .cta-play {
+      display: inline-flex; align-items: center; gap: 8px; margin-top: 2px;
+      background: #000; border-radius: 10px; padding: 7px 12px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+    }
+    .cta-play svg { width: 18px; height: 20px; flex-shrink: 0; }
+    .cta-play-txt { display: flex; flex-direction: column; line-height: 1.05; text-align: left; }
+    .cta-play-txt small { font-size: 0.52rem; letter-spacing: 0.4px; text-transform: uppercase; opacity: 0.85; }
+    .cta-play-txt strong { font-size: 0.86rem; font-weight: 600; }
+    .cta-note { font-size: clamp(0.6rem, 0.5vw + 0.45rem, 0.72rem); opacity: 0.85; }
+    @media (max-width: 520px) { .cta-tag, .cta-note { display: none; } }
+
+    /* Stat cards (moved here from the video) */
+    .stat-card {
+      position: absolute; z-index: 3;
+      display: inline-flex; align-items: center; gap: 8px; white-space: nowrap;
+      background: #fff; color: var(--text);
+      border-radius: 14px; padding: 9px 13px;
+      font-size: 0.82rem; font-weight: 600; box-shadow: var(--shadow-lg);
+    }
+    .stat-card b { color: var(--brown); font-weight: 800; }
+    .stat-card .sc-ic { font-size: 1.1rem; line-height: 1; }
+    .sc-points { top: -14px; left: 12%; }
+    .sc-reward { top: 46%; right: -14px; }
+    .sc-piggy  { bottom: 4%; left: -12px; }
+    @keyframes floaty { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
+    .stat-card { animation: floaty 5s ease-in-out infinite; }
+    .sc-reward { animation-delay: -1.6s; }
+    .sc-piggy  { animation-delay: -3s; }
+    @media (prefers-reduced-motion: reduce) { .stat-card { animation: none; } }
 
     @media (max-width: 860px) {
-      .hero-inner { grid-template-columns: 1fr; gap: 36px; padding: 54px 0 60px; text-align: center; }
-      .pill, .hero-badges { justify-content: center; }
-      .hero p.lead { margin-left: auto; margin-right: auto; }
+      .hero-inner { grid-template-columns: 1fr; gap: 36px; padding: 28px 0 36px; }
       .phone-col { order: -1; }
+      .hero-collage { width: 100%; max-width: 460px; margin: 0 auto; }
+    }
+    @media (max-width: 420px) {
+      .sc-reward { right: -6px; }
+      .sc-piggy  { left: -4px; }
+      .stat-card { font-size: 0.76rem; padding: 8px 11px; }
     }
 
     /* ── Section scaffolding ── */
@@ -222,8 +279,41 @@
     .sec-head h2 { font-size: clamp(1.7rem, 3.6vw, 2.4rem); font-weight: 800; letter-spacing: -0.6px; line-height: 1.15; }
     .sec-head p { margin-top: 14px; color: var(--text-soft); font-size: 1.03rem; }
 
+    /* ── Phone video (click-to-play facade, 9:16 inside the phone) ── */
+    .phone-video { position: relative; background: #000; }
+    .yt-facade {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      padding: 0; border: 0; cursor: pointer; background: #000; display: block;
+    }
+    .yt-facade img {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; display: block;
+    }
+    .yt-facade::after {
+      content: ""; position: absolute; inset: 0;
+      background: radial-gradient(circle at 50% 50%, rgba(0,0,0,0.05), rgba(0,0,0,0.45));
+      transition: background 0.2s;
+    }
+    .yt-facade:hover::after, .yt-facade:focus-visible::after {
+      background: radial-gradient(circle at 50% 50%, rgba(0,0,0,0), rgba(0,0,0,0.30));
+    }
+    .yt-play {
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+      width: 64px; height: 64px; border-radius: 50%; z-index: 1;
+      background: linear-gradient(135deg, var(--gold), var(--gold-2));
+      box-shadow: 0 10px 30px rgba(0,0,0,0.40);
+      display: flex; align-items: center; justify-content: center;
+      transition: transform 0.18s, box-shadow 0.2s;
+    }
+    .yt-facade:hover .yt-play, .yt-facade:focus-visible .yt-play {
+      transform: translate(-50%, -50%) scale(1.08);
+      box-shadow: 0 14px 38px rgba(0,0,0,0.50);
+    }
+    .yt-play svg { width: 26px; height: 26px; margin-left: 4px; fill: var(--brown-dark); }
+    .phone-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
     /* ── Feature grid ── */
-    .features { background: var(--white); }
+    .features { background: var(--white); padding-top: 48px; }
     .grid {
       display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
     }
@@ -418,6 +508,17 @@
         "publisher": { "@id": "https://kidsreward.in/#org" }
       },
       {
+        "@type": "VideoObject",
+        "@id": "https://kidsreward.in/#demo-video",
+        "name": "Kids Rewards — app demo",
+        "description": "A quick tour of Kids Rewards: awarding points for chores, adding monthly pocket money, redeeming real rewards and dream goals, and growing savings in the Piggy Bank.",
+        "thumbnailUrl": "https://i.ytimg.com/vi/2A6sxAdXlGY/maxresdefault.jpg",
+        "uploadDate": "2026-09-05",
+        "embedUrl": "https://www.youtube-nocookie.com/embed/2A6sxAdXlGY",
+        "contentUrl": "https://youtube.com/shorts/2A6sxAdXlGY",
+        "publisher": { "@id": "https://kidsreward.in/#org" }
+      },
+      {
         "@type": "FAQPage",
         "@id": "https://kidsreward.in/#faq",
         "mainEntity": [
@@ -515,44 +616,46 @@
 
   <!-- ── Hero ── -->
   <section class="hero">
+    <h1 class="sr-only">Kids Rewards — turn good deeds into great rewards</h1>
     <div class="wrap hero-inner">
-      <div class="hero-copy">
-        <span class="pill">🏆 Track · Reward · Celebrate</span>
-        <h1>Turn good deeds into <span class="hl">great rewards</span></h1>
-        <p class="lead">Kids Rewards helps parents turn everyday chores into a fun, motivating adventure. Award points for good deeds, add monthly pocket money, redeem points for real rewards, and grow savings in a Piggy Bank — all for your little explorers. Along the way, kids learn the basics of money — how it's earned, saved and spent.</p>
-        <div class="hero-badges">
-          <a class="gp-badge" href="https://play.google.com/store/apps/details?id=com.gunavs.kidsrewards" target="_blank" rel="noopener" aria-label="Get it on Google Play">
-            <svg viewBox="0 0 512 512" aria-hidden="true"><path fill="#00D3FF" d="M47 24 296 256 47 488a26 26 0 0 1-8-19V43a26 26 0 0 1 8-19Z"/><path fill="#00F076" d="M47 24a26 26 0 0 1 27 2l186 108-64 64L47 24Z"/><path fill="#FF3A44" d="M382 195l-58-34-64 63 64 64 58-34a29 29 0 0 0 0-59Z"/><path fill="#FFC300" d="M196 260 47 488a26 26 0 0 0 27-2l252-146-66-64-64 64Z"/></svg>
-            <span class="gp-txt"><small>Get it on</small><strong>Google Play</strong></span>
-          </a>
-          <span class="hero-note">Free · Android · Family-friendly</span>
+
+      <!-- LEFT: image collage (swap placeholders for real, text-free screens in img/) -->
+      <div class="hero-collage">
+        <div class="cc-col cc-col-a">
+          <!-- Tile A (tall). To use a real image: keep the <img>, replace src with img/promo-1.jpg -->
+          <div class="tile tile-a">
+            <img src="img/promo-1.jpg" alt="Kids Rewards — turn daily routines into missions" loading="lazy" onerror="this.remove()">
+          </div>
         </div>
+        <div class="cc-col cc-col-b">
+          <!-- Tile B -->
+          <div class="tile tile-b">
+            <img src="img/promo-2.jpg" alt="Kids Rewards — earn, save and spend" loading="lazy" onerror="this.remove()">
+            </div>
+          <a class="tile tile-c" href="https://play.google.com/store/apps/details?id=com.gunavs.kidsrewards" target="_blank" rel="noopener" aria-label="Get Kids Rewards on Google Play">
+            <div class="tile tile-b">
+            <img src="img/promo-3.jpg" alt="Kids Rewards — earn, save and spend" loading="lazy" onerror="this.remove()">
+            </div>
+          </a>
+        </div>
+
+        <!-- Stat cards moved here from the video (decorative) -->
+        <div class="stat-card sc-points" aria-hidden="true"><span class="sc-ic">⭐</span><span><b>+20</b> Points</span></div>
+        <div class="stat-card sc-reward" aria-hidden="true"><span class="sc-ic">🎁</span><span>Reward unlocked</span></div>
+        <div class="stat-card sc-piggy" aria-hidden="true"><span class="sc-ic">🐷</span><span><b>3,000</b> saved</span></div>
       </div>
 
       <div class="phone-col">
         <div class="phone">
-          <div class="phone-screen">
-            <div class="ps-head">
-              <div class="greet">Welcome back 👋</div>
-              <div class="title">Your Explorers</div>
-            </div>
-            <div class="ps-body">
-              <div class="kid-card">
-                <div class="kid-ava">🦊</div>
-                <div class="kid-meta"><div class="n">Aarav</div><div class="s">On a 5-day streak</div></div>
-                <div class="kid-pts">120<small>🐷 60 saved</small></div>
-              </div>
-              <div class="kid-card">
-                <div class="kid-ava">🐨</div>
-                <div class="kid-meta"><div class="n">Mia</div><div class="s">Dream: New bicycle</div></div>
-                <div class="kid-pts">85<small>🐷 30 saved</small></div>
-              </div>
-              <div class="kid-card">
-                <div class="kid-ava">🦄</div>
-                <div class="kid-meta"><div class="n">Kabir</div><div class="s">Helped set the table</div></div>
-                <div class="kid-pts">45<small>🐷 15 saved</small></div>
-              </div>
-            </div>
+          <div class="phone-screen phone-video">
+            <button class="yt-facade" type="button" data-id="2A6sxAdXlGY" aria-label="Play video: Kids Rewards demo">
+              <img src="https://i.ytimg.com/vi/2A6sxAdXlGY/oardefault.jpg"
+                   onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/2A6sxAdXlGY/hqdefault.jpg';"
+                   alt="Kids Rewards app demo video" loading="lazy">
+              <span class="yt-play" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </span>
+            </button>
           </div>
         </div>
       </div>
@@ -779,6 +882,24 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    // Click-to-play YouTube facade: load the player only when the user clicks.
+    document.querySelectorAll('.yt-facade').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var id = btn.getAttribute('data-id');
+        var iframe = document.createElement('iframe');
+        iframe.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0';
+        iframe.title = 'Kids Rewards demo';
+        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+        // Explicitly send the site origin as Referer to YouTube (required by their ToS).
+        iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+        iframe.setAttribute('allowfullscreen', '');
+        iframe.setAttribute('loading', 'lazy');
+        btn.replaceWith(iframe);
+      });
+    });
+  </script>
 
 </body>
 </html>
